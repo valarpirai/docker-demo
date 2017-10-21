@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hobby Project</title>
+
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+</head>
+<body>
+	{% if latest_query_list %}
+		<ul>
+		{% for query in latest_query_list %}
+			<li><a href="/dns/{{ query.id }}/">{{ query.request }}</a></li>
+		{% endfor %}
+		</ul>
+	{% else %}
+		<p>No polls are available.</p>
+	{% endif %}
+
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+</body>
+</html>

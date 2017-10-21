@@ -1,0 +1,57 @@
+// https://www.analyticsvidhya.com/blog/2015/10/beginner-guide-web-scraping-beautiful-soup-python/
+// https://automatetheboringstuff.com/
+// https://www.rust-lang.org/en-US/
+// https://awesome-go.com/
+// http://radio.garden/live/chennai/radio-city-tamil/
+
+//============================================================================================
+
+var createScriptTag = function(url, callback) {
+    if (!callback) callback = function() {};
+    var addScript = document.createElement('script');
+    addScript.type = "text/javascript";
+    addScript.onload = callback;
+    addScript.src = url;
+    document.head.appendChild(addScript);
+};
+
+var jqueryJS = "https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"
+createScriptTag(jqueryJS)
+
+imgs = $("img")
+imgs = $("img[src*=png]")
+
+for (var i = imgs.length - 1; i >= 0; i--) {
+	console.log($(imgs[i]).attr('src'))
+}
+
+lss = $("ul.slides li")
+for (var i = lss.length - 1; i >= 0; i--) {
+	var x = $(lss[i])
+	console.log($('img', x).attr('src'))
+	console.log($('.slider-text>a', x).text())
+	console.log($('.slider-text .slider-text-teaser', x).text())
+}
+
+// Live radio JSON
+$.ajax({
+  url: "http://rgapi-60c3.kxcdn.com/live.json?b=ea2bfd9064ac4362104d-4-13&noOutdatedSC=1",
+  cache: false,
+  success: function(html){
+    resp = html
+  }
+});
+
+//============================================================================================
+//
+//background-color: rgb(0, 143, 149);
+
+// background-color: rgb(45, 197, 219)
+
+// background-color: rgb(3, 155, 229);
+
+// background-color: rgb(0, 206, 160);
+// 
+// <iframe src="https://appear.in/your-room-name" width="800" height="640" frameborder="0"></iframe>
+// 
+
