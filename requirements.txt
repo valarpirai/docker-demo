@@ -16,7 +16,7 @@ feedparser==5.2.1
 gsearch==1.5.0
 gspread==0.6.2
 html5lib==0.999999999
-httplib2==0.10.3
+httplib2==0.18.0
 idna==2.5
 inflect==0.2.5
 ipykernel==4.6.1
